@@ -23,7 +23,7 @@ def api_id():
     result = {'result': ''}
     if 'v' in request.args:
         result['result'] = 'ok'
-        voltage: float = float(request.args['v'])
+        voltage = float(request.args['v'])
 
         date = datetime.now().strftime("%d-%m-%Y %H:%M:%S")
 
