@@ -1,6 +1,7 @@
 import flask
 import os
 import ftplib
+import gc
 
 import matplotlib.pyplot as plt
 
@@ -72,10 +73,10 @@ def api_id():
         session.storbinary('STOR battery.png', file)
         file.close()
         session.quit()
-
     else:
         result['result'] = 'ko'
 
+    gc.collect()
     return jsonify(result)
 
 
