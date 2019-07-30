@@ -9,8 +9,6 @@ verify_ssl = true
 flask = "*"
 requests = "*"
 matplotlib = "*"
-pympler = "*"
-
 
 [requires]
 python_version = "3"

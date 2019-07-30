@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "72cd7428202f32365ab3a80db6bbb59e72930e9b16a6276d21685dd31e397427"
+            "sha256": "3093f6d6ddbdad950e83e944b854c9de7b41853214506e6f21dab4cfad8b7856"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -51,6 +51,13 @@
             ],
             "index": "pypi",
             "version": "==1.1.1"
+        },
+        "graphviz": {
+            "hashes": [
+                "sha256:6d0f69c107cfdc9bd1df3763fad99569bbcba29d0c52ffcbc6f266621d8bf709",
+                "sha256:914b8b124942d82e3e1dcef499c9fe77c10acd3d18a1cfeeb2b9de05f6d24805"
+            ],
+            "version": "==0.11.1"
         },
         "idna": {
             "hashes": [
@@ -174,6 +181,14 @@
                 "sha256:f4e4612de60a4f1c4d06c8c2857cdcb2b8b5289189a12053f37d3f41f06c60d0"
             ],
             "version": "==1.17.0"
+        },
+        "objgraph": {
+            "hashes": [
+                "sha256:10d50116d1a66934d143a07308a5b3b3edcc021e1457f66ff792584166cae7cd",
+                "sha256:bf29512d7f8b457b53fa0722ea59f516abb8abc59b78f97f0ef81394a0c615a7"
+            ],
+            "index": "pypi",
+            "version": "==3.4.1"
         },
         "pympler": {
             "hashes": [
