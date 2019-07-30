@@ -10,7 +10,6 @@ from datetime import datetime
 
 
 app = flask.Flask(__name__)
-app.config["DEBUG"] = True
 
 
 @app.route('/', methods=['GET'])
@@ -79,6 +78,15 @@ def api_id():
         all_objects = muppy.get_objects()
         sum1 = summary.summarize(all_objects)  # Prints out a summary of the large objects
         summary.print_(sum1)  # Get references to certain types of objects such as dataframe
+
+        import sys
+        # print(globals())
+
+        loca = locals()
+        for var in loca:
+            mida = sys.getsizeof(loca[var])/1024/1024
+            if mida > 0.5:
+                print(var, type(loca[var]), " - ", " - ", mida, "Mb")
 
     else:
         result['result'] = 'ko'
