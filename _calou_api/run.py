@@ -19,12 +19,12 @@ app = flask.Flask(__name__)
 def worker(voltage):
     date = datetime.now().strftime("%d-%m-%Y %H:%M:%S")
 
-    filename = "data_{}.txt".format(datetime.now().strftime("%m"))
+    filename = "data.txt"
     # if last modification date of the file was one year before, empty file
     if os.path.isfile(filename):
         stat = os.stat(filename)
 
-        if datetime.fromtimestamp(stat.st_mtime).strftime("%m") < datetime.now().strftime("%m"):
+        if datetime.now() - datetime.fromtimestamp(stat.st_mtime) > 10:
             open(filename, 'w').close()
 
     num = float(voltage)
