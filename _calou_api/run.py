@@ -24,7 +24,7 @@ def worker(voltage):
     if os.path.isfile(filename):
         stat = os.stat(filename)
 
-        if datetime.now() - datetime.fromtimestamp(stat.st_mtime) > 10:
+        if (datetime.now() - datetime.fromtimestamp(stat.st_mtime)).days > 10:
             open(filename, 'w').close()
 
     num = float(voltage)
