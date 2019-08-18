@@ -21,11 +21,8 @@ def worker(voltage):
 
     filename = "data.txt"
     # if last modification date of the file was one year before, empty file
-    if os.path.isfile(filename):
-        stat = os.stat(filename)
-
-        if (datetime.now() - datetime.fromtimestamp(stat.st_mtime)).days > 10:
-            open(filename, 'w').close()
+    if os.stat(filename).st_size > 1048576:
+        open(filename, 'w').close()
 
     num = float(voltage)
     if num < 11.6:
