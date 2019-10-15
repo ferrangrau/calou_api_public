@@ -5,6 +5,10 @@ from PIL import Image
 import glob
 import time
 import os
+import sys
+
+# Install imageMagick
+# > sudo apt-get install imagemagick
 
 while True:
     url = 'http://altair12.net/imatges/webcam/exterior01/petita.jpg'
@@ -20,7 +24,7 @@ while True:
     # -------------------------------------------------------------------
     if len(files) < 10:
         filename = "../resources/0{}.jpg".format(len(files))
-    elif len(files) < 100:
+    elif len(files) < 50:
         filename = "../resources/{}.jpg".format(len(files))
     else:
         filename = files[0]
@@ -30,20 +34,10 @@ while True:
 
     # Create animated Gif
     # -------------------------------------------------------------------
-    frames = []
-
-    try:
-        for i in files_sort_by_name:
-            new_frame = Image.open(i)
-            frames.append(new_frame)
-    except OSError:
-        pass
-
-    # Save into a GIF file that loops forever
-    frames[0].save('loop.gif', format='GIF',
-                   append_images=frames[1:],
-                   save_all=True,
-                   duration=500, loop=0)
+    dataDir = '../resources/'
+    os.chdir(dataDir)
+    os.system('convert *.jpg ../loop.gif')
+    os.chdir('../')
 
     # Upload with ftp
     # -------------------------------------------------------------------
