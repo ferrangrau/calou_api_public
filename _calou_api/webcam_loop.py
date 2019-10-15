@@ -20,7 +20,7 @@ while True:
     # -------------------------------------------------------------------
     if len(files) < 10:
         filename = "../resources/0{}.jpg".format(len(files))
-    elif len(files) < 20:
+    elif len(files) < 100:
         filename = "../resources/{}.jpg".format(len(files))
     else:
         filename = files[0]
@@ -43,7 +43,7 @@ while True:
     frames[0].save('loop.gif', format='GIF',
                    append_images=frames[1:],
                    save_all=True,
-                   duration=300, loop=0)
+                   duration=500, loop=0)
 
     # Upload with ftp
     # -------------------------------------------------------------------
@@ -54,4 +54,4 @@ while True:
     file.close()
     session.quit()
 
-    time.sleep(600)
+    time.sleep(300)
